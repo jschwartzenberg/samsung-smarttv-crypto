@@ -37,7 +37,7 @@ public class Crypto {
 			BaseEncoding.base16().decode(keys.getProperty("wbKey").toUpperCase()), AES);
 	private static SecretKeySpec transKey = new SecretKeySpec(
 			BaseEncoding.base16().decode(keys.getProperty("transKey").toUpperCase()), RIJNDAEL);
-	private static byte[] publicKey = BaseEncoding.base16().decode(keys.getProperty("publicKey").toUpperCase());
+	static byte[] publicKey = BaseEncoding.base16().decode(keys.getProperty("publicKey").toUpperCase());
 
 	public static Properties readPropertiesFile(String fileName) {
 		try (InputStream is = Crypto.class.getResourceAsStream(fileName)) {
